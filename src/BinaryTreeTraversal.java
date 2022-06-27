@@ -7,19 +7,6 @@ public class BinaryTreeTraversal {
      * @param node the node from which the traversal starts.
      * @return a String representation of the data elements of the nodes visited in preorder
      */
-    /*public static String preOrder(Node node) {
-        String nodes = "";
-        // if tree exists
-        if (node != null) {
-            // visit the node (root of subtree)
-            nodes += " " + node.getElement();
-            // pre-order traverse left subtree
-            nodes += preOrder(node.getLeft());
-            // pre-order traverse right subtree
-            nodes += preOrder(node.getRight());
-        }
-        return nodes;
-    }*/
     public static String preOrder(Node node) {
         String nodes = "";
         //Base case
@@ -40,11 +27,12 @@ public class BinaryTreeTraversal {
     public static String postOrder(Node node)
     {
         String nodes ="";
-        if (node != null) {
-            nodes += postOrder(node.getLeft());
-            nodes += postOrder(node.getRight());
-            nodes += " " + node.getElement();
-        }
+        //Base case
+        if (node == null)
+            return "";
+        nodes += postOrder(node.getLeft());
+        nodes += postOrder(node.getRight());
+        nodes += " " + node.getElement();
         return nodes;
     }
 
@@ -55,11 +43,12 @@ public class BinaryTreeTraversal {
      */
     public static String inOrder(Node node) {
         String nodes ="";
-        if (node != null) {
-            nodes += inOrder(node.getLeft());
-            nodes += " " + node.getElement();
-            nodes += inOrder(node.getRight());
-        }
+        //Base case
+        if (node == null)
+            return "";
+        nodes += inOrder(node.getLeft());
+        nodes += " " + node.getElement();
+        nodes += inOrder(node.getRight());
         return nodes;
     }
 
