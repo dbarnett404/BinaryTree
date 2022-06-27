@@ -23,8 +23,11 @@ public class Main {
         binaryTree.insertRight(rootNode.getLeft().getRight(), "d");
 
         System.out.println("Pre-order: " + BinaryTreeTraversal.preOrder(rootNode));
+        System.out.println("Iterative Pre-order: " + BinaryTreeTraversal.iterativePreOrder(rootNode));
         System.out.println("In-order: " + BinaryTreeTraversal.inOrder(rootNode));
+        System.out.println("Iterative In-order: " + BinaryTreeTraversal.iterativeInOrder(rootNode));
         System.out.println("Post-order: " + BinaryTreeTraversal.postOrder(rootNode));
+        System.out.println("Iterative Post-order: " + BinaryTreeTraversal.iterativePostOrder(rootNode));
         System.out.println("Height " + binaryTree.getBTHeight(rootNode));
     }
 }

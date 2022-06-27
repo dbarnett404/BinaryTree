@@ -78,38 +78,13 @@ public class BinaryTree
     }
 
     /**
-     * Get the left child of a given node (or throw an exception if it doesn't exist)
-     * @param node the given node
-     * @return a tree node 
-     */
-    public Node getLeft(Node node) throws NoSuchElementException {
-        if (!hasLeft(node)) {
-            throw new NoSuchElementException("No left child");
-        }
-        return node.getLeft();
-    }
-
-    /**
-     * Get the right child of a given node (or throw an exception if it doesn't exist)
-     * @param node the given node
-     * @return a tree node 
-     */
-    public Node getRight(Node node) throws NoSuchElementException {
-        if (!hasRight(node)) {
-            throw new NoSuchElementException("No right child");
-        }
-        return node.getRight();
-    }
-
-    /**
      * Get the parent of a given node (or throw an exception if the given node is the root)
      * @param node the given node
      * @return a tree node 
      */
-    public Node getParent(Node node) throws NoSuchElementException {
-        if (isRoot(node)) {
-            throw new NoSuchElementException("root of tree");
-        }
+    public Node getParent(Node node) {
+        if (isRoot(node))
+            System.out.println("Root of tree");
         return node.getParent();
     }
 
@@ -162,9 +137,8 @@ public class BinaryTree
         return newRight;
     }
     public int getBTHeight(Node node) {
-        if (root == null) {
+        if (node == null)
             return 0;
-        }
         int leftBTHeight = getBTHeight(node.getLeft());
         int rightBTHeight = getBTHeight(node.getRight());
         return Math.max(leftBTHeight, rightBTHeight) + 1;
